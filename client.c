@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     printf("Enter a handle (max_length=10, CTRL-C to exit):");
 
     // flush std output
-    fflush(stdout);
+    //fflush(stdout);
     //Gets user input
     //fgets(h, NAME_SIZE, stdin);
 
@@ -52,12 +52,12 @@ int main(int argc, char *argv[])
     int c = 0;
     while (handle[c] != '\0')
         c++;
-    printf("c: %d", c);
+    printf("c: %d \n", c);
 
 
     // check that handle is not too long 
 
-    if (num > 11){
+    if (c > 11){
         fprintf(stderr,"handle must be less than 10 characters in length\n");
         fprintf(stderr,"usage %s hostname port\n", argv[0]);
         free(handle);
@@ -66,7 +66,15 @@ int main(int argc, char *argv[])
    
     printf("Here is the raw entered line: %s", handle);
     //snprintf(handle, bufferSize, "%s> ", handle);
-    //printf("Here is the raw entered line: %s", handle);
+    //handle[c]='>';
+    int d = 1;
+    //handle[d]=">";
+    //handle[d]="\0";
+    printf("\nHere is the prompt: handle %s", handle);
+    strtok(handle, "\n");
+    strcat(handle, "> Hi!!");
+    printf("\nHere is the prompt: handle %s", handle);
+
 
 
 
